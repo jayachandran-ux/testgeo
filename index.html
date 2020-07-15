@@ -2,8 +2,8 @@
 <html>
    <head>
       <title>Leaflet sample</title>
-      <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-      <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+   
+      
    </head>
 
    <body>
@@ -13,7 +13,7 @@
          // Creating map options
          function showPosition() {
              if(navigator.geolocation) {
-               alert("inside getposition");
+               //alert("inside getposition");
                  navigator.geolocation.getCurrentPosition(showMap, showError);
              } else {
                  alert("Sorry, your browser does not support HTML5 geolocation.");
@@ -22,29 +22,10 @@
 
          function showMap(position)
          {
-            alert("draw getposition");
+           // alert("draw getposition");
            lat = position.coords.latitude;
            long = position.coords.longitude;
-           // Creating map options
-           var mapOptions = {
-              center: [lat, long],
-              zoom: 10
-           }
-           // Creating a map object
-           var map = new L.map('map', mapOptions);
-
-           // Creating a Layer object
-           var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-
-           // Adding layer to the map
-           map.addLayer(layer);
-
-           // Creating a marker
-           var marker = L.marker([lat, long]);
-
-           // Adding marker to the map
-           marker.addTo(map);
-
+          alert("Lat: "+position.coords.latitude + "& Log :" + position.coords.longitude);
        }
 
        function showError(error) {
